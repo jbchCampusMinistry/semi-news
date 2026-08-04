@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>반도체 뉴스</title>
+<title>반도체 취업 허브</title>
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
@@ -85,17 +85,86 @@ nav.toc ol{margin:0;padding-left:20px}nav.toc a{display:inline-block;padding:3px
   pre{break-inside:avoid;overflow:visible;white-space:pre-wrap}
   .table-wrap{overflow:visible} thead th{position:static}
 }
+
+.day{margin:22px 0 0;padding:14px 18px;background:var(--surface-alt);
+  border:1px solid var(--border);border-radius:var(--radius)}
+.day h3{margin:0 0 6px;font-size:1rem;color:var(--accent)}
+.arts{list-style:none;margin:6px 0 0;padding:0}
+.arts li{padding:9px 0;border-top:1px solid var(--border)}
+.arts li:first-child{border-top:0}
+.arts .t{font-weight:600}
+.arts .s{color:var(--muted);font-size:.85rem;margin-top:2px}
+.co-list{list-style:none;padding:0;margin:0}
+.co-list li{padding:10px 0;border-bottom:1px solid var(--border)}
+.co-list .n{font-weight:600}
+.co-list .m{color:var(--muted);font-size:.85rem}
+.appeal{border:1px solid var(--border);border-left:4px solid var(--accent);
+  border-radius:var(--radius);padding:12px 16px;margin:12px 0;background:var(--surface-alt)}
+.appeal .p{font-weight:600}
+.appeal .w{color:var(--muted);font-size:.9rem;margin-top:3px}
+.appeal .ev{font-size:.83rem;margin-top:5px}
+.qa{margin:12px 0;padding:12px 16px;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius)}
+.qa .q{font-weight:600}
+.qa .a{color:var(--muted);font-size:.92rem;margin-top:3px}
+.kws{margin:10px 0 0}
+.arts .rel{font-size:.82rem;color:var(--muted);margin-top:3px}
+.arts .sc{display:inline-block;font-size:.72rem;font-weight:700;color:var(--accent);
+  background:var(--accent-weak);border-radius:999px;padding:1px 7px;margin-right:5px}
+.chk{border:0;background:none;cursor:pointer;font-size:1rem;line-height:1;
+  padding:0 6px 0 0;margin:0}
+.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.arts li.is-read .t a{color:var(--muted)}
+.arts li.is-read{opacity:.72}
+.rbar{height:8px;background:var(--surface);border-radius:6px;overflow:hidden;margin:6px 0 0}
+.rbar>span{display:block;height:100%;background:var(--accent);width:0}
+.prog{color:var(--muted);font-size:.82rem;margin-left:6px}
+.topnav{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 2px}
+.topnav a{display:inline-block;border:1px solid var(--border);border-radius:999px;
+  padding:4px 13px;font-size:.85rem;text-decoration:none;background:var(--surface)}
+.topnav a:hover{background:var(--accent-weak)}
+.topnav a.here{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:16px 0}
+.card{display:block;border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px 18px;background:var(--surface);text-decoration:none;color:inherit}
+.card:hover{border-color:var(--accent);background:var(--surface-alt)}
+.card .ic{font-size:1.5rem}
+.card .tt{font-weight:700;margin-top:6px}
+.card .ds{color:var(--muted);font-size:.86rem;margin-top:3px}
+.card .st{display:inline-block;margin-top:8px;font-size:.78rem;font-weight:700;
+  color:var(--accent);background:var(--accent-weak);border-radius:999px;padding:2px 10px}
+.card .st.hot{color:#c0392b;background:#fde8e8}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>반도체 뉴스</h1>
-  <div class="meta">갱신 2026-08-05 06:09 · 매일 07:00 자동</div>
-  <div class="summary"><h2>바로가기</h2><ul>
-    <li><a href="companies/index.html"><b>기업별 아카이브</b></a> — 동향 · 자소서 어필 · 면접 질문 · 날짜별 뉴스</li>
-    <li><a href="jobs.html"><b>💼 채용 공고 트래커</b></a> — 마감 D-day · 매칭 분석 · 지원 체크</li>
-    <li><a href="latest.html"><b>오늘 브리핑</b></a></li>
-  </ul></div>
+  <h1>반도체 취업 허브</h1>
+  <div class="meta">뉴스 · 기업 분석 · 채용 공고를 한곳에서 · 갱신 2026-08-05 06:14 · 매일 07:00 자동</div>
+
+  <div class="cards">
+    <a class="card" href="latest.html">
+      <div class="ic">📰</div><div class="tt">오늘 브리핑</div>
+      <div class="ds">해외·국내 장비사 + 삼성 + 산업 뉴스 요약</div>
+      <span class="st">매일 07:00</span>
+    </a>
+    <a class="card" href="jobs.html">
+      <div class="ic">💼</div><div class="tt">채용 공고 트래커</div>
+      <div class="ds">마감 D-day · 매칭 분석 · ⭐관심/✅지원 체크</div>
+      <span class="st hot">마감 7일 내 15건</span>
+    </a>
+    <a class="card" href="companies/index.html">
+      <div class="ic">🏢</div><div class="tt">기업별 아카이브</div>
+      <div class="ds">기업 소개 · 동향 · 자소서 어필 · 면접 질문</div>
+      <span class="st">47개 기업 · 누적 56건</span>
+    </a>
+    <a class="card" href="weekly/2026-08-04_반도체-주간리포트.html">
+      <div class="ic">📊</div><div class="tt">주간 리포트</div>
+      <div class="ds">5대 이슈 · 면접 대비 포인트</div>
+      <span class="st">2026-08-04</span>
+    </a>
+  </div>
+
   <h2 id="s1">1. 일별 브리핑</h2><ul><li><a href="briefing/2026-08-04_반도체-뉴스-브리핑.html">2026-08-04_반도체-뉴스-브리핑</a></li></ul>
   <h2 id="s2">2. 주간 리포트</h2><ul><li><a href="weekly/2026-08-04_반도체-주간리포트.html">2026-08-04_반도체-주간리포트</a></li></ul>
   <div class="doc-footer">생성: Claude KB · tools/news_digest/publish.py</div>

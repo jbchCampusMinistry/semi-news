@@ -120,12 +120,18 @@ nav.toc ol{margin:0;padding-left:20px}nav.toc a{display:inline-block;padding:3px
 .rbar{height:8px;background:var(--surface);border-radius:6px;overflow:hidden;margin:6px 0 0}
 .rbar>span{display:block;height:100%;background:var(--accent);width:0}
 .prog{color:var(--muted);font-size:.82rem;margin-left:6px}
+.topnav{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 2px}
+.topnav a{display:inline-block;border:1px solid var(--border);border-radius:999px;
+  padding:4px 13px;font-size:.85rem;text-decoration:none;background:var(--surface)}
+.topnav a:hover{background:var(--accent-weak)}
+.topnav a.here{background:var(--accent);color:#fff;border-color:var(--accent)}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>엘오티베큠 뉴스 아카이브</h1>
-  <div class="meta">국내 반도체 장비사 · 중견기업 · 한국 · 진공펌프·스크러버 · 갱신 2026-08-04 23:54</div>
+  <div class="meta">국내 반도체 장비사 · 중견기업 · 한국 · 진공펌프·스크러버 · 갱신 2026-08-05 06:14</div>
+  <nav class="topnav" aria-label="사이트 메뉴"><a href="../index.html">🏠 홈</a><a href="../latest.html">📰 오늘 브리핑</a><a href="../companies/index.html" class="here">🏢 기업 아카이브</a><a href="../jobs.html">💼 채용 트래커</a></nav>
 
   <nav class="toc" aria-label="목차"><strong>목차</strong><ol>
     <li><a href="#s0">기업 소개 · 주력 장비</a></li>
