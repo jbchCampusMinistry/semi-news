@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>반도체 뉴스</title>
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f6f8fa; --surface-alt:#fbfcfd; --text:#1f2430; --muted:#5b6472;
+  --border:#e3e6ec; --accent:#3b5bdb; --accent-weak:#edf0fe;
+  --ok:#2f9e44; --warn:#e8590c; --danger:#e03131; --info:#1c7ed6;
+  --radius:10px; --maxw:860px;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,"Segoe UI","Malgun Gothic",system-ui,sans-serif;
+  --mono:"Cascadia Code","D2Coding",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+  font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:48px 24px 96px}
+h1{font-size:1.9rem;line-height:1.3;margin:0 0 6px;letter-spacing:-.02em}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:28px}
+h2{font-size:1.35rem;margin:40px 0 14px;padding-bottom:6px;border-bottom:2px solid var(--accent-weak)}
+h3{font-size:1.1rem;margin:26px 0 10px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+p,li{margin:8px 0}
+blockquote{margin:16px 0;padding:8px 16px;border-left:3px solid var(--border);color:var(--muted)}
+.summary{background:var(--accent-weak);border-left:4px solid var(--accent);
+  border-radius:var(--radius);padding:16px 20px;margin:0 0 28px}
+.summary h2{border:0;margin:0 0 8px;font-size:1.05rem;color:var(--accent)}
+.summary ul{margin:0;padding-left:18px}
+.callout{border-left:4px solid var(--border);background:var(--surface);border-radius:var(--radius);
+  padding:12px 16px;margin:16px 0;display:flex;gap:10px;align-items:flex-start}
+.callout .ico{flex:0 0 auto;font-size:1.05rem;margin-top:1px}
+.callout .cl-label{font-weight:700;margin-right:4px}
+.callout.note{border-color:var(--info)} .callout.tip{border-color:var(--ok)}
+.callout.warn{border-color:var(--warn)} .callout.danger{border-color:var(--danger)}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);margin:18px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+caption{caption-side:top;text-align:left;color:var(--muted);font-size:.85rem;padding:0 0 6px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+thead th{background:var(--surface);font-weight:600;position:sticky;top:0}
+tbody tr:nth-child(even){background:var(--surface-alt)}
+code{font-family:var(--mono);background:var(--surface);padding:.12em .4em;border-radius:5px;font-size:.9em}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;overflow-x:auto}
+pre code{background:none;padding:0}
+.badge{display:inline-block;background:var(--accent-weak);color:var(--accent);border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:600}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:18px 0}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.metric .num{font-size:1.6rem;font-weight:700;letter-spacing:-.02em}
+.metric .label{color:var(--muted);font-size:.85rem;margin-top:2px}
+dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:14px 0}
+dl.kv dt{color:var(--muted);font-weight:600}dl.kv dd{margin:0}
+figure{margin:18px 0}figure img{max-width:100%;height:auto;border-radius:var(--radius)}
+figcaption{color:var(--muted);font-size:.85rem;margin-top:6px}
+nav.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin:0 0 28px}
+nav.toc strong{display:block;color:var(--muted);font-size:.85rem;margin-bottom:6px}
+nav.toc ol{margin:0;padding-left:20px}nav.toc a{display:inline-block;padding:3px 0}
+.doc-footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+/* --- 뉴스 브리핑 전용 (표준 토큰만 사용) --- */
+.co{margin:22px 0 0;padding:14px 18px;background:var(--surface-alt);
+  border:1px solid var(--border);border-radius:var(--radius)}
+.co-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:2px}
+.co-head .name{font-weight:700;font-size:1.02rem}
+.co-head .spec{color:var(--muted);font-size:.85rem}
+.arts{list-style:none;margin:8px 0 0;padding:0}
+.arts li{padding:9px 0;border-top:1px solid var(--border)}
+.arts li:first-child{border-top:0}
+.arts .t{font-weight:600}
+.arts .s{color:var(--muted);font-size:.85rem;margin-top:2px}
+.arts .d{margin-top:2px}
+@media (max-width:640px){body{font-size:15.5px}.wrap{padding:28px 16px 64px}h1{font-size:1.55rem}}
+@media print{
+  body{font-size:11pt;color:#000}
+  .wrap{max-width:none;padding:0}
+  nav.toc{display:none} a{color:#000}
+  h1,h2,h3{break-after:avoid;break-inside:avoid}
+  .co{break-inside:avoid}
+  pre{break-inside:avoid;overflow:visible;white-space:pre-wrap}
+  .table-wrap{overflow:visible} thead th{position:static}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>반도체 뉴스</h1>
+  <div class="meta">갱신 2026-08-04 22:20 · 매일 07:00 자동</div>
+  <div class="summary"><h2>바로가기</h2><ul>
+    <li><a href="companies/index.html"><b>기업별 아카이브</b></a> — 동향 · 자소서 어필 · 면접 질문 · 날짜별 뉴스</li>
+    <li><a href="latest.html"><b>오늘 브리핑</b></a></li>
+  </ul></div>
+  <h2 id="s1">1. 일별 브리핑</h2><ul><li><a href="briefing/2026-08-04_반도체-뉴스-브리핑.html">2026-08-04_반도체-뉴스-브리핑</a></li></ul>
+  <h2 id="s2">2. 주간 리포트</h2><ul><li><a href="weekly/2026-08-04_반도체-주간리포트.html">2026-08-04_반도체-주간리포트</a></li></ul>
+  <div class="doc-footer">생성: Claude KB · tools/news_digest/publish.py</div>
+</div>
+</body>
+</html>
